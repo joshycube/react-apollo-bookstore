@@ -30,9 +30,13 @@
     "graphql-tag": "^2.10.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test --coverage",
+    "test:watch": "react-app-rewired test --coverage --watch",
+    "test:lint": "tslint -c tslint.json 'src/**/*.tsx' 'src/**/*.ts'",
+    "test:unit:tc": "yarn test --forceExit --coverage --testResultsProcessor jest-teamcity-reporter",
+    "test:lint:tc": "yarn test:lint",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

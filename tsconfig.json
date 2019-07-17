@@ -1,7 +1,9 @@
 {
+  "extends": "./tsconfig.path.json",
   "compilerOptions": {
     "target": "es5",
     "lib": [
+      "es6",
       "dom",
       "dom.iterable",
       "esnext"
@@ -17,9 +19,14 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "suppressImplicitAnyIndexErrors": true
   },
   "include": [
-    "src"
+    "src",
+    "tsconfig.path.json"
+  ],
+  "exclude": [
+    "node_modules"
   ]
 }
