@@ -1,5 +1,6 @@
 import React from "react";
 
+import Button from "@/components/ui/button";
 export interface IBook {
   bookId: number;
   title: string;
@@ -21,6 +22,8 @@ export const BooksRender = ({ data: { books } }: IProps) => (
           {book.title} - {book.author}
         </h4>
         <span>£{book.price}</span>
+        <Button>Edit</Button>
+        <Button>Add to basket</Button>
       </li>
     ))}
   </ul>
