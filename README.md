@@ -10,6 +10,7 @@ and the project will start on `http://localhost:3000`
 # improvements / todos
 
 - UI DESIGN!!!
+- Consider devices - media queries
 - Add tests to achieve a good coverage
 - Move the settings to .env
 - Add Intl and JSON objects for strings and tokens to make them translatable
