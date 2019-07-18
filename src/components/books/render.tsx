@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { Link } from "react-router-dom";
 
 import { IBasket } from "@/apollo/basket/type";
@@ -22,7 +22,7 @@ interface IProps {
   remove: (arg: { variables: { id: number } }) => void;
 }
 
-const isInBasket = (items: IBook[], id: number): boolean =>
+export const isInBasket = (items: IBook[], id: number): boolean =>
   !!items.filter((item: IBook) => item.bookId === id).length;
 
 export const BooksRender = ({
@@ -56,4 +56,4 @@ export const BooksRender = ({
   </BooksWrapper>
 );
 
-export default BooksRender;
+export default memo(BooksRender);

@@ -5,7 +5,7 @@ import gql from "graphql-tag";
 import BooksRender from "./render";
 
 export const QUERY_BOOKS = gql`
-  {
+  query GetBooks {
     basket @client {
       items {
         bookId
