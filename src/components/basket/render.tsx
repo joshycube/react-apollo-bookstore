@@ -19,10 +19,8 @@ export const getTotal = (items: IBook[]): number =>
 const BasketRender = ({ basket: { items } }: IProps) => {
   return (
     <BasketWrapper>
-      <div>
-        You have selected: {items.length} books with the total price of: £
-        {getTotal(items).toFixed(2)}
-      </div>
+      You have selected: {items.length} books with the total price of: £
+      {getTotal(items).toFixed(2)}
     </BasketWrapper>
   );
 };
