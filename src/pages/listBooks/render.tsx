@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 
 import Books from "@/components/books";
 import Navigation from "@/components/navigation";
@@ -11,4 +11,4 @@ const ListBooksPage = () => (
   </SceneWrapper>
 );
 
-export default ListBooksPage;
+export default memo(ListBooksPage);

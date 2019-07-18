@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 
 import CreateBookForm from "@/components/forms/createBook";
 import { SceneWrapper } from "../style";
@@ -9,4 +9,4 @@ const CreateBookPage = () => (
   </SceneWrapper>
 );
 
-export default CreateBookPage;
+export default memo(CreateBookPage);
