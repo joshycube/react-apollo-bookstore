@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { Link } from "react-router-dom";
 
 import { NavWrapper, NavItemWrapper } from "./style";
@@ -11,4 +11,4 @@ export const NavigationRender = () => (
   </NavWrapper>
 );
 
-export default NavigationRender;
+export default memo(NavigationRender);
