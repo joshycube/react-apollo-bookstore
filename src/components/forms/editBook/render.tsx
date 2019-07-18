@@ -28,16 +28,19 @@ export const EditBookFormRender = ({
   return (
     <FormWrapper>
       <StyledInput
+        placeholder="title"
         id="input-title"
         onChange={e => setTitle(e.target.value)}
         value={title}
       />
       <StyledInput
+        placeholder="author"
         id="input-author"
         onChange={e => setAuthor(e.target.value)}
         value={author}
       />
       <StyledInput
+        placeholder="0.0"
         type="number"
         id="input-price"
         onChange={e => setPrice(e.target.value)}
