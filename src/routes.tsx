@@ -19,7 +19,11 @@ const Routes = () => (
         render={() => <Redirect to="/page/list/books" push />}
       />
       <Route path="/page/list/books" render={() => <ListBooksPage />} />
-      <Route exact path="/page/edit/book/:id" render={() => <EditBookPage />} />
+      <Route
+        exact
+        path="/page/edit/book/:bookId"
+        render={() => <EditBookPage />}
+      />
       <Route exact path="/page/create/book" render={() => <CreateBookPage />} />
     </Switch>
   </Router>
