@@ -1,10 +1,16 @@
 import gql from "graphql-tag";
 
+import { IBook } from "@/components/books/type";
+import { IBasket } from "./type";
+
 export const QUERY_BASKET = gql`
   {
     basket @client {
       items {
-        id
+        bookId
+        title
+        price
+        author
       }
     }
   }
@@ -13,14 +19,14 @@ export const QUERY_BASKET = gql`
 const mutations = {
   addItem: (
     _: any,
-    { item }: { item: any },
+    { item }: { item: IBook },
     {
       cache
     }: {
       cache: {
         writeData: (params: {}) => void;
         readQuery: (params: {}) => {
-          basket: any;
+          basket: IBasket;
         };
       };
     }
@@ -38,14 +44,14 @@ const mutations = {
 
   removeItem: (
     _: any,
-    { id }: { id: string },
+    { id }: { id: number },
     {
       cache
     }: {
       cache: {
         writeData: (params: {}) => void;
         readQuery: (params: {}) => {
-          basket: any;
+          basket: IBasket;
         };
       };
     }
@@ -55,7 +61,9 @@ const mutations = {
       data: {
         basket: {
           __typename: "BasketItems",
-          items: storedItems.basket.items.filter((item: any) => item.id !== id)
+          items: storedItems.basket.items.filter(
+            (item: IBook) => item.bookId !== id
+          )
         }
       }
     });
